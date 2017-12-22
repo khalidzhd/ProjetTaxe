@@ -25,7 +25,8 @@ public class Secteur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Double id;
-    private Double montant;
+    private String nom;
+    private int montant;
     @ManyToOne
     private ZoneLocale zone;
     @OneToMany
@@ -35,15 +36,24 @@ public class Secteur implements Serializable {
         return id;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    
+
     public void setId(Double id) {
         this.id = id;
     }
 
-    public Double getMontant() {
+    public int getMontant() {
         return montant;
     }
 
-    public void setMontant(Double montant) {
+    public void setMontant(int montant) {
         this.montant = montant;
     }
 
@@ -70,10 +80,23 @@ public class Secteur implements Serializable {
         this.id = id;
     }
 
-    public Secteur(Double id, Double montant) {
+    public Secteur(Double id, String nom, int montant) {
         this.id = id;
+        this.nom = nom;
         this.montant = montant;
     }
+
+    public Secteur(String nom, int montant, ZoneLocale zone) {
+        this.nom = nom;
+        this.montant = montant;
+        this.zone = zone;
+    }
+
+    
+    
+    
+
+    
 
    
 

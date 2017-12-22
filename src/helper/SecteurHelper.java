@@ -5,7 +5,9 @@
  */
 package helper;
 
-import bean.Redevable;
+
+import bean.Secteur;
+
 import java.util.List;
 import javax.swing.JTable;
 
@@ -13,7 +15,7 @@ import javax.swing.JTable;
  *
  * @author YOUNES
  */
-public class RedevableHelper extends AbstractHelper<Redevable> {
+public class SecteurHelper extends AbstractHelper<Secteur> {
 
     private static AbstractHelperItem[] titres;
 
@@ -21,21 +23,20 @@ public class RedevableHelper extends AbstractHelper<Redevable> {
         titres = new AbstractHelperItem[]{
             new AbstractHelperItem("ID ", "id"),
             new AbstractHelperItem("NOM", "nom"),
-            new AbstractHelperItem("PRENOM","prenom"),
-            new AbstractHelperItem("CIN", "cin"),
-        new AbstractHelperItem("AGE", "age")};
+            new AbstractHelperItem("MONTANT ", "montant")};
+          
 
     }
 
-    public RedevableHelper(JTable jTable, List<Redevable> list) {
+    public SecteurHelper(JTable jTable, List<Secteur> list) {
         super(titres, jTable, list);
     }
 
-    public RedevableHelper(AbstractHelperItem[] abstractHelperItem, JTable jTable) {
+    public SecteurHelper(AbstractHelperItem[] abstractHelperItem, JTable jTable) {
         super(titres, jTable);
     }
 
-    public RedevableHelper(JTable jTable) {
+    public SecteurHelper(JTable jTable) {
         super(titres, jTable);
     }
 }

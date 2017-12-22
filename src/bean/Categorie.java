@@ -22,16 +22,27 @@ public class Categorie implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Double montant;
+    private String nom ;
+    private int montant;
 
-    public Double getMontant() {
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getMontant() {
         return montant;
     }
 
-    public void setMontant(Double montant) {
+    public void setMontant(int montant) {
         this.montant = montant;
     }
+    
 
+   
     public Categorie() {
     }
 
@@ -39,10 +50,13 @@ public class Categorie implements Serializable {
         this.id = id;
     }
 
-    public Categorie(Long id, Double montant) {
+    public Categorie(Long id, String nom, int montant) {
         this.id = id;
+        this.nom = nom;
         this.montant = montant;
     }
+
+   
 
     public Long getId() {
         return id;

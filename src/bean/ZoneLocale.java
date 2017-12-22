@@ -34,6 +34,10 @@ public class ZoneLocale implements Serializable {
         return id;
     }
 
+    public ZoneLocale(String name) {
+        this.name = name;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -64,6 +68,16 @@ public class ZoneLocale implements Serializable {
 
     public ZoneLocale() {
     }
+
+    public ZoneLocale(Long id) {
+        this.id = id;
+    }
+
+    public ZoneLocale(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
 
    
     @Override

@@ -16,9 +16,9 @@ import view.Local;
  *
  * @author khalid
  */
-public class LocalService extends AbstractFacade<Local>{
+public class LocalConstructionService extends AbstractFacade<Local>{
     
-    public LocalService() {
+    public LocalConstructionService() {
         super(Local.class);
     }
         public int creeLocal (String id ,Secteur secteur ,ZoneLocale zone ,Categorie categorie ){

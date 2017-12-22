@@ -5,7 +5,8 @@
  */
 package helper;
 
-import bean.Redevable;
+
+import bean.ZoneLocale;
 import java.util.List;
 import javax.swing.JTable;
 
@@ -13,29 +14,27 @@ import javax.swing.JTable;
  *
  * @author YOUNES
  */
-public class RedevableHelper extends AbstractHelper<Redevable> {
+public class ZoneLocaleHelper extends AbstractHelper<ZoneLocale> {
 
     private static AbstractHelperItem[] titres;
 
     static {
         titres = new AbstractHelperItem[]{
             new AbstractHelperItem("ID ", "id"),
-            new AbstractHelperItem("NOM", "nom"),
-            new AbstractHelperItem("PRENOM","prenom"),
-            new AbstractHelperItem("CIN", "cin"),
-        new AbstractHelperItem("AGE", "age")};
+            new AbstractHelperItem("NOM", "name")};
+          
 
     }
 
-    public RedevableHelper(JTable jTable, List<Redevable> list) {
+    public ZoneLocaleHelper(JTable jTable, List<ZoneLocale> list) {
         super(titres, jTable, list);
     }
 
-    public RedevableHelper(AbstractHelperItem[] abstractHelperItem, JTable jTable) {
+    public ZoneLocaleHelper(AbstractHelperItem[] abstractHelperItem, JTable jTable) {
         super(titres, jTable);
     }
 
-    public RedevableHelper(JTable jTable) {
+    public ZoneLocaleHelper(JTable jTable) {
         super(titres, jTable);
     }
 }
