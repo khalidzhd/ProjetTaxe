@@ -26,7 +26,11 @@ public class SecteurService extends AbstractFacade<Secteur> {
         create(secteur);
         return 1;
     }
-    public List<Secteur> findByZone(Long idZone){
-        return getEntityManager().createQuery("select s FROM Secteur s WHERE s.zone.id= '"+idZone+"'").getResultList();
+    public List<Secteur> findByZone(String nom){
+        return getEntityManager().createQuery("select s FROM Secteur s WHERE s.zone.name= '"+nom+"'").getResultList();
     }
+    public Secteur findSecteur(String nom){
+        return  getUniqueResult("select s FROM Secteur s WHERE s.nom= '"+nom+"'");
+    }
+    
 }

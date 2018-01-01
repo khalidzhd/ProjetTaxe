@@ -24,5 +24,10 @@ public class ZoneLocaleService extends AbstractFacade<ZoneLocale>{
         return 1;
     }
     
+     public ZoneLocale findZone(String nom){
+        return  getUniqueResult("select z FROM ZoneLocale z WHERE z.name= '"+nom+"'");
+    }
+    
+    
     
 }

@@ -25,6 +25,11 @@ public class CategorieService extends AbstractFacade<Categorie>{
         return 1;
         
     }
+    public Categorie findCategorie(String nom){
+        return  (Categorie) getUniqueResult("select c FROM Categorie c WHERE c.nom= '"+nom+"'");
+    }
+    
+  
 
     
 }

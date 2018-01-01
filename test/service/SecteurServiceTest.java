@@ -70,5 +70,32 @@ public class SecteurServiceTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
+
+//    /**
+//     * Test of findByZone method, of class SecteurService.
+//     */
+//    @Test
+//    public void testFindByZone() {
+//        System.out.println("findByZone");
+//        String nom = "";
+//        SecteurService instance = new SecteurService();
+//        List<Secteur> expResult = null;
+//        List<Secteur> result = instance.findByZone(nom);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+    /**
+     * Test of findSecteur method, of class SecteurService.
+     */
+    @Test
+    public void testFindSecteur() {
+        System.out.println("findSecteur");
+        String nom = "Rehba";
+        SecteurService instance = new SecteurService();
+        Secteur result = instance.findSecteur(nom);
+        System.out.println(result);
+    }
     
 }

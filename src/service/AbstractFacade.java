@@ -37,7 +37,23 @@ public class AbstractFacade<T> {
         getEntityManager().persist(entity);
         getEntityManager().getTransaction().commit();
     }
+public T getUniqueResult(String query) {
+        List<T> list = getEntityManager().createQuery(query).getResultList();
+        if (list != null && list.size() > 0) {
+            return list.get(0);
+        }
+        return null;
 
+    }
+
+    public List<T> getMultipleResult(String query) {
+        List<T> list = getEntityManager().createQuery(query).getResultList();
+        if (list != null && list.size() > 0) {
+            return list;
+        }
+        return null;
+
+    }
     public void edit(T entity) {
         getEntityManager().getTransaction().begin();
         getEntityManager().merge(entity);

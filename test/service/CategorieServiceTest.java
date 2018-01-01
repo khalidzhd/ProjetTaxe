@@ -5,6 +5,7 @@
  */
 package service;
 
+import bean.Categorie;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,16 +41,28 @@ public class CategorieServiceTest {
     /**
      * Test of initCategorie method, of class CategorieService.
      */
+//    @Test
+//    public void testInitCategorie() {
+//        System.out.println("initCategorie");
+//        int m = 20;
+//        String nom = "construction  ";
+//        CategorieService instance = new CategorieService();
+//        int expResult = 1;
+//        int result = instance.initCategorie(m, nom);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//    }
+
+    /**
+     * Test of findCategorie method, of class CategorieService.
+     */
     @Test
-    public void testInitCategorie() {
-        System.out.println("initCategorie");
-        int m = 20;
-        String nom = "construction  ";
+    public void testFindCategorie() {
+        System.out.println("findCategorie");
+        String nom = "construction";
         CategorieService instance = new CategorieService();
-        int expResult = 1;
-        int result = instance.initCategorie(m, nom);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        Categorie result = instance.findCategorie(nom);
+        System.out.println(result);
     }
     
 }

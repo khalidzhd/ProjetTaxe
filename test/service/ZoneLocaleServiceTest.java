@@ -5,6 +5,7 @@
  */
 package service;
 
+import bean.ZoneLocale;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,15 +41,27 @@ public class ZoneLocaleServiceTest {
     /**
      * Test of initZone method, of class ZoneLocaleService.
      */
+//    @Test
+//    public void testInitZone() {
+//        System.out.println("initZone");
+//        String name = "Gueliz";
+//        ZoneLocaleService instance = new ZoneLocaleService();
+//        int expResult = 1;
+//        int result = instance.initZone(name);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//    }
+
+    /**
+     * Test of findZone method, of class ZoneLocaleService.
+     */
     @Test
-    public void testInitZone() {
-        System.out.println("initZone");
-        String name = "Gueliz";
+    public void testFindZone() {
+        System.out.println("findZone");
+        String nom = "Medina";
         ZoneLocaleService instance = new ZoneLocaleService();
-        int expResult = 1;
-        int result = instance.initZone(name);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        ZoneLocale result = instance.findZone(nom);
+        System.out.println(result);
     }
     
 }

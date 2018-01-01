@@ -21,16 +21,19 @@ public class ZoneSecteur extends javax.swing.JFrame {
     /**
      * Creates new form ZoneSecteur
      */
-    ZoneLocaleService zoneLocaleService =new ZoneLocaleService();
-    SecteurService secteurService= new SecteurService();
+    ZoneLocaleService zoneLocaleService = new ZoneLocaleService();
+    SecteurService secteurService = new SecteurService();
     SecteurHelper secteurHelper;
     ZoneLocaleHelper zoneLocaleHelper;
+
     public void initHelperSecteur() {
         secteurHelper = new SecteurHelper(stable);
     }
-     public void initHelperZone() {
+
+    public void initHelperZone() {
         zoneLocaleHelper = new ZoneLocaleHelper(ztable, zoneLocaleService.findAll());
     }
+
     public ZoneSecteur() {
         initComponents();
         initHelperZone();
@@ -74,7 +77,6 @@ public class ZoneSecteur extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 102, 102));
 
         stable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,25 +242,26 @@ public class ZoneSecteur extends javax.swing.JFrame {
     private void montantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_montantActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_montantActionPerformed
- private ZoneLocale getParamZone() {
+    private ZoneLocale getParamZone() {
         return new ZoneLocale(zone.getText());
     }
- private Secteur getParamSecteur(){
-     return new Secteur(secteur.getText(), Integer.parseInt(montant.getText()),
-             new ZoneLocale(zoneLocaleHelper.getSelected().getId()));
- }
+
+    private Secteur getParamSecteur() {
+        return new Secteur(secteur.getText(), Integer.parseInt(montant.getText()),
+                new ZoneLocale(zoneLocaleHelper.getSelected().getId()));
+    }
     private void btnZoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZoneActionPerformed
         // TODO add your handling code here:
         ZoneLocale zoneLocale = getParamZone();
         zoneLocaleService.create(zoneLocale);
         zoneLocaleHelper.save(zoneLocale);
-        
-                
+
+
     }//GEN-LAST:event_btnZoneActionPerformed
 
     private void btnSecteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecteurActionPerformed
         // TODO add your handling code here:
-        Secteur secteur =getParamSecteur();
+        Secteur secteur = getParamSecteur();
         secteurService.create(secteur);
         secteurHelper.save(secteur);
     }//GEN-LAST:event_btnSecteurActionPerformed
@@ -269,7 +272,7 @@ public class ZoneSecteur extends javax.swing.JFrame {
 
     private void ztableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ztableMouseClicked
         // TODO add your handling code here:
-        secteurHelper.setList(secteurService.findByZone(zoneLocaleHelper.getSelected().getId()));
+        secteurHelper.setList(secteurService.findByZone(zoneLocaleHelper.getSelected().getName()));
     }//GEN-LAST:event_ztableMouseClicked
 
     /**

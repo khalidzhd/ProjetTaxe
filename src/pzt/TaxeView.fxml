@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="631.0" style="-fx-background-color: #6E6E6E;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pzt.TaxeViewController">
+   <children>
+      <Label layoutX="65.0" layoutY="103.0" text="Local :" textFill="#221818">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="159.0" text="Redevable  :" textFill="#221818">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="227.0" text="Metrage :" textFill="#221818">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="299.0" text="Date Presentation  :" textFill="#221818">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePre" layoutX="387.0" layoutY="306.0" />
+      <TextField fx:id="metrage" layoutX="387.0" layoutY="246.0" prefHeight="25.0" prefWidth="174.0" />
+      <ComboBox fx:id="redevable" layoutX="387.0" layoutY="178.0" prefHeight="25.0" prefWidth="174.0" />
+      <ComboBox fx:id="local" layoutX="384.0" layoutY="110.0" prefHeight="25.0" prefWidth="180.0" />
+      <Button layoutX="316.0" layoutY="386.0" mnemonicParsing="false" text="OK">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

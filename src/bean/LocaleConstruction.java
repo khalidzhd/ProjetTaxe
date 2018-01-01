@@ -52,6 +52,9 @@ public class LocaleConstruction implements Serializable {
         this.id = id;
     }
 
+    
+    
+
   
     public Secteur getSecteur() {
         return secteur;

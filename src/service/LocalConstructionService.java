@@ -5,7 +5,6 @@
  */
 package service;
 
-
 import bean.Categorie;
 import bean.LocaleConstruction;
 import bean.Secteur;
@@ -16,23 +15,28 @@ import view.Local;
  *
  * @author khalid
  */
-public class LocalConstructionService extends AbstractFacade<Local>{
-    
+public class LocalConstructionService extends AbstractFacade<LocaleConstruction> {
+
+    SecteurService secteurService = new SecteurService();
+    ZoneLocaleService zoneLocaleService = new ZoneLocaleService();
+    CategorieService categorieService = new CategorieService();
+
     public LocalConstructionService() {
-        super(Local.class);
+        super(LocaleConstruction.class);
     }
-        public int creeLocal (String id ,Secteur secteur ,ZoneLocale zone ,Categorie categorie ){
-            LocaleConstruction localeConstruction = new LocaleConstruction();
-            localeConstruction.setId(id);
-            localeConstruction.setSecteur(secteur);
-            localeConstruction.setZone(zone);
-            localeConstruction.setCategorie(categorie);
+
+    public int creeLocal(String id, String  nomSecteur, String nomZone, String nomCategorie) {
+        LocaleConstruction localeConstruction = new LocaleConstruction();
         
+        localeConstruction.setId(id);
+        Secteur s = secteurService.findSecteur(nomSecteur);
+        localeConstruction.setSecteur(s);
+        ZoneLocale z = zoneLocaleService.findZone(nomZone);
+        localeConstruction.setZone(z);
+        Categorie c =categorieService.findCategorie(nomCategorie);
+        localeConstruction.setCategorie(c);
+        create(localeConstruction);
         return 1;
-        
     }
-    
-    
-    
-    
+
 }
